@@ -7,6 +7,7 @@
 
     home.packages = with pkgs; [
         fastfetch
+        inputs.zen-browser.packages.${system}.default
     ];
 
     dconf = {
