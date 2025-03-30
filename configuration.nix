@@ -3,9 +3,9 @@
 {
 	
 	imports =
-    		[
-      			./hardware-configuration.nix
-    		];
+		[
+			./hardware-configuration.nix
+		];
 
 	nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
@@ -48,19 +48,23 @@
 		description = "Max Lunaris";
 		extraGroups = [ "networkmanager" "wheel" ];
 		hashedPassword = "$6$xnOj1Mi.Lc1mQZ2a$xyNrOr4nMGUNT6fPjJPXkHEgV6Atw15dfcq7.Tj6YpFCHF1IJPYFj7shNSdDk9BAkbqLNZoFMapN/7N5Vm4sK/";
-		packages = with pkgs; [
-			fastfetch
-		];
 	};
 
 	nixpkgs.config.allowUnfree = true;
 
-	environment.systemPackages = [
-		pkgs.gnomeExtensions.blur-my-shell
-		pkgs.gnomeExtensions.just-perfection
-		pkgs.gnomeExtensions.dash-to-dock
-		pkgs.vim
-		pkgs.git
+	environment.systemPackages = with pkgs; [
+		# gnome extensions
+		gnomeExtensions.blur-my-shell
+		gnomeExtensions.just-perfection
+		gnomeExtensions.dash-to-dock
+
+		# fonts
+		inter
+		cascadia-code
+
+		# expansion packs
+		vim
+		git
 	];
 
 	system.stateVersion = "24.11";
