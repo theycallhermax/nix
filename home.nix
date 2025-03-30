@@ -23,11 +23,11 @@
             font-name = "Inter 11";
             document-font-name= "Inter 11";
             monospace-font-name = "Cascadia Code 11";
-            enable-hot-corners = false
-            clock-format = "12h"
+            enable-hot-corners = false;
+            clock-format = "12h";
         };
         settings."org/gnome/desktop/peripherals/touchpad" = {
-            natural-scroll = false
+            natural-scroll = false;
         };
     };
 
